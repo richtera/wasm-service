@@ -2,8 +2,9 @@ use serde::{Deserialize, Serialize};
 use std::sync::{Mutex, MutexGuard};
 
 fn handle_request(request: &Request) -> String {
-    if let Some(url) = &request.url {
-        format!("<div>Hey <b>Darrly</b>, this html is generated from Rust WASM using a service worker that intercepts http calls and returns HTML for {}", url).to_string()
+    if let Some(_url) = &request.url {
+        include_str!("Pony - Wikipedia.html").to_string()
+        // format!("<div>Hey <b>Darrly</b>, this html is generated from Rust WASM using a service worker that intercepts http calls and returns HTML for {}", url).to_string()
     } else {
         "error".to_string()
     }
